@@ -1,0 +1,15 @@
+{% extends 'search_download/base.html' %}
+
+{% block content %}
+  <!-- Navbar content -->
+	<h1>Create User</h1>
+	<form method="post">
+	    
+	    {% csrf_token %}
+	    
+	    Username:<br> {{ form.username }}<br>
+	    Password:<br> {{ form.password1 }}<br>
+	    Confirm Password:<br> {{ form.password2 }}<br><br>
+	    <button type="submit">Submit</button>
+	</form>
+{% endblock %}

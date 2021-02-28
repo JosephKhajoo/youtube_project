@@ -1,0 +1,33 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Download</title>
+</head>
+<body> -->
+{% extends 'search_download/base.html' %}
+
+{% block content %}	
+	<style type="text/css">
+
+		.center{
+			text-align: center;
+		}
+
+		.iframe-class{
+			border: 1px solid black;
+			border-radius: 10px;
+		}
+
+	</style>
+	<div class="center">
+	<iframe class="iframe-class" src="{{ embedded_url }}"></iframe><br><br>
+		<form method="post">
+			{% csrf_token %}
+			{% for res in resolutions %}
+				{{ res }} - <button type="submit">Download</button><br><br>
+			{% endfor %}
+		</form>
+	</div>
+{% endblock %}
+<!-- </body>
+</html> -->
